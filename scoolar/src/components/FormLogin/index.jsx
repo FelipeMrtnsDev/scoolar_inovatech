@@ -1,26 +1,30 @@
-import { FormContainer } from "./styles"
+import { EntrarUsando, FormContainer, Input } from "./styles"
 
 function FormLogin() {
     return(
         <FormContainer>
             <form>
-                <h1>Insira os seus dados</h1>
-                <div>
-                    <p>Login</p>
-                    <input type="email" required />
+                <div className="titulo">
+                    <h1>Insira os seus dados</h1>
                 </div>
-                <div>
-                    <p>Senha</p>
-                    <input type="password" required />
+                <Input>
+                    <input type="email" required placeholder="Login" />
+                </Input>
+                <Input>
+                    <input type="password" required placeholder="Senha" />
+                </Input>
+                <div className="button-entrar">
+                    <button type="submit">Entrar</button>
+                    <a href="#">Esqueci minha senha</a>
                 </div>
-                <button type="submit">Entrar</button>
-                <a href="#">Esqueci minha senha</a>
             </form>
-            <div>
+            <EntrarUsando>
                 <p>Entrar usando</p>
-                <div></div>
-                <div></div>
-            </div>
+                <div className="redes">
+                    <div className="esquerda"></div>
+                    <div className="direita"></div>
+                </div>
+            </EntrarUsando>
         </FormContainer>
     )
 }
