@@ -1,19 +1,16 @@
-import { useNavigate } from "react-router-dom"
 import { EntrarUsando, FormContainer, Input } from "./styles"
 
-function FormLogin() {
-    const navigate = useNavigate()
+function FormRegister() {
 
     const handleClick = (e) => {
         e.preventDefault()
-        navigate("/lobby")
     }
 
     return(
         <FormContainer>
-            <form onSubmit={handleClick}>
+            <form>
                 <div className="titulo">
-                    <h1>Insira os seus dados</h1>
+                    <h1>Cadastre-se</h1>
                 </div>
                 <Input>
                     <input type="email" required placeholder="Login" />
@@ -21,9 +18,12 @@ function FormLogin() {
                 <Input>
                     <input type="password" required placeholder="Senha" />
                 </Input>
+                <Input>
+                    <input type="password" required placeholder="Confirmar senha" />
+                </Input>
                 <div className="button-entrar">
-                    <button type="submit">Entrar</button>
-                    <a href="#">Esqueci minha senha</a>
+                    <button onSubmit={handleClick} type="submit">Entrar</button>
+                    <a href="#">Já possuo conta/Realizar Login</a>
                 </div>
             </form>
             <EntrarUsando>
@@ -37,4 +37,4 @@ function FormLogin() {
     )
 }
 
-export default FormLogin
+export default FormRegister
